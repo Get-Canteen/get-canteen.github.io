@@ -67,6 +67,21 @@ body, html {
     height: 38px;
 }
 
+.response1 {
+    display: inline-block;
+    height: 38px;
+    padding: 0 30px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 38px;
+    letter-spacing: .1rem;
+    white-space: nowrap;
+    border-radius: 4px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
 .response {
     background-color: #d9714e;
     display: inline-block;
