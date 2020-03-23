@@ -1,1 +1,94 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Canteen</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/icon.png">
+
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script>
+    $(function () {
+
+      $('form').on('submit', function (e) {
+
+        e.preventDefault();
+
+        $.ajax({
+          type: 'post',
+          url: 'https://getcanteen.us19.list-manage.com/subscribe/post?u=c295881f208eb6e962fe40ae5&amp;id=53fd8cd7be',
+          data: $('form').serialize(),
+        });
+
+      });
+
+    });
+  </script>
+
+</head>
+
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="hero-image-overlay">
+    <div class="hero-image">
+    </div>
+  </div>
+  <div class="hero-text">
+    <h1 class="title">Canteen</h1>
+    <div class="main-text-container">
+      <h4 class="main-text">
+        Want to earn money video chatting?
+      </h4>
+      <h4 class="main-text">
+        Want to teach or learn?
+      </h4>
+      <h4 class="main-text">
+        Match with someone who has the same interests and goals!
+      </h4>
+    </div>
+    <form
+      onsubmit="document.getElementById('response').style.display = 'block';document.getElementById('form-row').style.display = 'none';return false">
+      <div class="row" id="form-row">
+        <div class="eight columns">
+          <input type="email" placeholder="Enter email address" name="EMAIL" class="text-input" id="mce-EMAIL"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+        </div>
+        <div class="four columns">
+          <input class="button-primary" type="submit" value="Get Early Access" class="button">
+        </div>
+      </div>
+      <div class="response" id="response" style="display: none">Thank you for signing up!</div>
+    </form>
+  </div>
+
+
+
+  <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+
+</html>

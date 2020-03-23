@@ -1,0 +1,84 @@
+body, html {
+    height: 100%;
+}
+
+.hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/background-image.jpeg');
+
+    height: 100%;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-image-overlay {
+  background: no-repeat center center fixed; 
+  background-size: cover;
+  display: block;
+  left: -5px;
+  top:-5px;
+  bottom:-5px;
+  position: fixed;
+  right: -5px;
+  -webkit-filter: blur(4px);
+  -moz-filter: blur(4px);
+  -o-filter: blur(4px);
+  -ms-filter: blur(4px);
+  filter: blur(4px);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  margin:-5px;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.main-text {
+    line-height: 30px;
+    font-size: x-large;
+}
+
+.main-text-container {
+    padding-top: 15px;
+    padding-bottom: 60px;
+}
+
+.text-input {
+    color: gray;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.title {
+    color: #d9714e;
+}
+
+.row {
+    height: 38px;
+}
+
+.response {
+    background-color: #d9714e;
+    display: inline-block;
+    height: 38px;
+    padding: 0 30px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 38px;
+    letter-spacing: .1rem;
+    white-space: nowrap;
+    border-radius: 4px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
