@@ -97,3 +97,60 @@ body, html {
     cursor: pointer;
     box-sizing: border-box;
 }
+
+.title-container {
+    padding-bottom: 20px;
+}
+
+.tagline-text {
+    font-weight: 600;
+    font-size: large;
+}
+
+.form-wrapper {
+    margin: auto;
+    max-width: 60vw;
+    width: 480px;
+    padding: 50px;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    display: block;
+    background-color: whitesmoke;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.form-box {
+    /* background-color: #fff;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    padding: 24px;
+    margin-top: 0;
+    page-break-inside: avoid; */
+}
+
+.form {
+    display: block;
+    line-height: 14px; 
+}
+
+.form-label {
+    margin-bottom: 20px;
+    line-height: 18px;
+}
+
+.form-field {
+    padding-bottom: 8px;
+}
+
+.button-block {
+    padding-top: 20px;
+}
+
+.sign-up-response {
+    font-size: large;
+}

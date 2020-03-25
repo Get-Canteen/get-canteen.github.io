@@ -34,8 +34,6 @@
 
       $('form').on('submit', function (e) {
 
-        e.preventDefault();
-
         $.ajax({
           type: 'post',
           url: 'https://getcanteen.us19.list-manage.com/subscribe/post?u=c295881f208eb6e962fe40ae5&amp;id=53fd8cd7be',
@@ -70,24 +68,18 @@
         Match with someone who has the same interests and goals!
       </h4>
     </div>
-    <form
-      onsubmit="document.getElementById('response').style.display = 'block';document.getElementById('response1').style.display = 'block';document.getElementById('form-row').style.display = 'none';return false">
+    <form action='sign-up.html'>
       <div class="row" id="form-row">
         <div class="eight columns">
-          <input type="email" placeholder="Enter email address" name="EMAIL" class="text-input" id="mce-EMAIL"
+          <input type="email" placeholder="Enter email address" name="email" class="text-input" id="mce-EMAIL"
             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
         </div>
         <div class="four columns">
-          <input class="button-primary" type="submit" value="Get Early Access" class="button">
+          <input class="button-primary" type="submit" value="Get Early Access">
         </div>
       </div>
-      <div class="response1" id="response1" style="display: none">Share with friends who you want to teach or learn
-        from!</div>
-      <div class="response" id="response" style="display: none">Thank you for signing up!</div>
     </form>
   </div>
-
-
 
   <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
