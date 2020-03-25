@@ -98,13 +98,10 @@ body, html {
     box-sizing: border-box;
 }
 
-.title-container {
-    padding-bottom: 20px;
-}
-
 .tagline-text {
     font-weight: 600;
     font-size: large;
+    line-height: 23px;
 }
 
 .form-wrapper {
@@ -139,7 +136,7 @@ body, html {
 }
 
 .form-label {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     line-height: 18px;
 }
 
