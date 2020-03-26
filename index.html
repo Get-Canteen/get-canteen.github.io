@@ -44,10 +44,18 @@
 
       $('form').on('submit', function (e) {
 
+        e.preventDefault();
+
         $.ajax({
           type: 'post',
           url: 'https://getcanteen.us19.list-manage.com/subscribe/post?u=c295881f208eb6e962fe40ae5&amp;id=53fd8cd7be',
           data: $('form').serialize(),
+          error: function () {
+            window.location.href = `sign-up.html?email=${$('#mce-EMAIL').val()}`;
+          },
+          success: function () {
+            window.location.href = `sign-up.html?email=${$('#mce-EMAIL').val()}`;
+          }
         });
 
       });
@@ -78,10 +86,10 @@
         Match with someone who has the same interests and goals!
       </h4>
     </div>
-    <form action='sign-up.html'>
+    <form method='post'>
       <div class="row" id="form-row">
         <div class="eight columns">
-          <input type="email" placeholder="Enter email address" name="email" class="text-input" id="mce-EMAIL"
+          <input type="email" placeholder="Enter email address" name="EMAIL" class="text-input" id="mce-EMAIL"
             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
         </div>
         <div class="four columns">
