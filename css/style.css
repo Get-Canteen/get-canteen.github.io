@@ -86,10 +86,15 @@ body, html {
     line-height: 23px;
 }
 
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .form-wrapper {
-    margin: 0 auto;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 60px;
+    margin-bottom: 60px;
     max-width: 60vw;
     width: 480px;
     padding: 50px;
