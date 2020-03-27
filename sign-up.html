@@ -29,6 +29,15 @@
 
                 e.preventDefault();
 
+                var learnSkill = $('#beginner-learn:checked').val() ? $('#beginner-learn:checked').val() : ($('#intermediate-learn:checked').val() ? $('#intermediate-learn:checked').val() : ($('#advanced-learn:checked').val() ? $('#advanced-learn:checked').val() : ''));
+                $learnInput = $('<input type="text" name="entry.134050487"/>').val(learnSkill);
+                $('form').append($learnInput);
+
+                var teachSkill = $('#beginner-teach:checked').val() ? $('#beginner-teach:checked').val() : ($('#intermediate-teach:checked').val() ? $('#intermediate-teach:checked').val() : ($('#advanced-teach:checked').val() ? $('#advanced-teach:checked').val() : ''));
+                $teachInput = $('<input type="text" name="entry.202938604"/>').val(teachSkill);
+                $('form').append($teachInput);
+
+
                 $.ajax({
                     type: 'post',
                     url: 'https://docs.google.com/forms/d/e/1FAIpQLSc4qTbvTe6ZCVzdBRwaiXcmzWUbfFC5yZ9QMU9LlkRtizwSlA/formResponse',
@@ -43,59 +52,94 @@
 </head>
 
 <body>
-    <div class="hero-image-overlay">
-        <div class="hero-image">
-        </div>
-    </div>
-
-    <div class="form-wrapper">
-        <div class="title-container">
-            <h1>Canteen Sign-Up</h1>
-            <div id="title-text">
-                <p class="tagline-text">Thank you for signing up! Let's <span style="color:#d9714e">teach</span> and
-                    <span style="color:#d9714e">learn</span> from each other!
-                    Spread the love and invite those you think will enjoy our private community who love learning and
-                    social
-                    connection.</p>
-                <p>After you fill out this form, we will connect you with the right person who shares your interests to
-                    learn from or
-                    teach!
-                </p>
-            </div>
-        </div>
-        <div id="form-box" class="form-box">
-            <form class="form"
-                onsubmit="document.getElementById('title-text').style.display = 'none';document.getElementById('response').style.display = 'block';document.getElementById('form-box').style.display = 'none';return false"
-                method="post">
-                <label class="form-label">Email address*</label>
-                <input id="email-field" class="form-field" type="email" placeholder="Email address"
-                    name="entry.2005620554" required><br />
-
-                <label class="form-label">What do you want to <span style="color:#d9714e">learn</span> over video
-                    chat?</label>
-                <input class="form-field" type="text" placeholder="Juggling" name="entry.1045781291"><br />
-
-                <label class="form-label">If you want to <span style="color:#d9714e">learn</span>, how much would you
-                    donate for 30 minutes?</label>
-                <input class="form-field" type="text" placeholder="$10" name="entry.1746995999"><br />
-
-                <label class="form-label">What do you want to <span style="color:#d9714e">teach</span> over video
-                    chat?</label>
-                <input class="form-field" type="text" placeholder="Cooking" name="entry.1804530665"><br />
-
-                <label class="form-label">If you want to <span style="color:#d9714e">teach</span>, what is the suggested
-                    donation for 30 minutes?</label>
-                <input class="form-field" type="text" placeholder="$10" name="entry.453049746"><br />
-
-                <div class="button-block">
-                    <input class="button-primary" type="submit" value="Submit">
+    <div class="hero-image">
+        <div class="form-wrapper">
+            <div class="title-container">
+                <h1>Canteen Sign-Up</h1>
+                <div id="title-text">
+                    <p class="tagline-text">Thank you for signing up!
+                        Spread the love and invite those you think will enjoy our private community who love learning
+                        and
+                        social
+                        connection.</p>
+                    <p>After you fill out this form, we will connect you with the right person who shares your interests
+                        to
+                        learn from or
+                        teach!
+                    </p>
                 </div>
+            </div>
+            <div id="form-box" class="form-box">
+                <form class="form"
+                    onsubmit="document.getElementById('title-text').style.display = 'none';document.getElementById('response').style.display = 'block';document.getElementById('form-box').style.display = 'none';return false"
+                    method="post">
+                    <label class="form-label">Email address*</label>
+                    <input id="email-field" class="form-field" type="email" placeholder="Email address"
+                        name="entry.2005620554" required><br />
 
-            </form>
+                    <label class="form-label">What do you want to <span style="color:#d9714e">learn</span> over video
+                        chat?</label>
+                    <input class="form-field" type="text" placeholder="Juggling" name="entry.1045781291"><br />
+
+                    <label class="form-label">What is your skill level of what you want to <span
+                            style="color:#d9714e">learn</span>?</label>
+                    <div class="radio-answer-container">
+                        <div class="radio-option-container">
+                            <label for="beginner-learn">Beginner</label>
+                            <input type="radio" id="beginner-learn" name="learn-skill-level" value="beginner">
+                        </div>
+                        <div class="radio-option-container">
+                            <label for="intermediate-learn">Intermediate</label>
+                            <input type="radio" id="intermediate-learn" name="learn-skill-level" value="intermediate">
+                        </div>
+                        <div class="radio-option-container">
+                            <label for="advanced-learn">Advanced</label>
+                            <input type="radio" id="advanced-learn" name="learn-skill-level" value="advanced">
+                        </div>
+                    </div>
+
+                    <label class="form-label">If you want to <span style="color:#d9714e">learn</span>, how much would
+                        you
+                        donate for 30 minutes?</label>
+                    <input class="form-field" type="text" placeholder="$10" name="entry.1746995999"><br />
+
+                    <label class="form-label">What do you want to <span style="color:#d9714e">teach</span> over video
+                        chat?</label>
+                    <input class="form-field" type="text" placeholder="Cooking" name="entry.1804530665"><br />
+
+                    <label class="form-label">What is your skill level of what you want to <span
+                            style="color:#d9714e">teach</span>?</label>
+                    <div class="radio-answer-container">
+                        <div class="radio-option-container">
+                            <label for="beginner-teach">Beginner</label>
+                            <input type="radio" id="beginner-teach" name="teach-skill-level" value="beginner">
+                        </div>
+                        <div class="radio-option-container">
+                            <label for="intermediate-teach">Intermediate</label>
+                            <input type="radio" id="intermediate-teach" name="teach-skill-level" value="intermediate">
+                        </div>
+                        <div class="radio-option-container">
+                            <label for="advanced-teach">Advanced</label>
+                            <input type="radio" id="advanced-teach" name="teach-skill-level" value="advanced">
+                        </div>
+                    </div>
+
+                    <label class="form-label">If you want to <span style="color:#d9714e">teach</span>, what is the
+                        suggested
+                        donation for 30 minutes?</label>
+                    <input class="form-field" type="text" placeholder="$10" name="entry.453049746"><br />
+
+                    <div class="button-block">
+                        <input class="button-primary" type="submit" value="Submit">
+                    </div>
+
+                </form>
+            </div>
+            <div class="sign-up-response" id="response" style="display: none">Thank you for signing up! We will contact
+                you
+                shortly!</div>
+
         </div>
-        <div class="sign-up-response" id="response" style="display: none">Thank you for signing up! We will contact you
-            shortly!</div>
-
     </div>
 
     <script>
