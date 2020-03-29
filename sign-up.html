@@ -48,6 +48,12 @@
             });
 
         });
+
+        function popupWindow(url, title, win, w, h) {
+            const y = win.top.outerHeight / 2 + win.top.screenY - (h / 2);
+            const x = win.top.outerWidth / 2 + win.top.screenX - (w / 2);
+            return win.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + y + ', left=' + x);
+        }
     </script>
 
 </head>
@@ -134,11 +140,49 @@
 
                     </form>
                 </div>
-                <div class="sign-up-response" id="response" style="display: none">Thank you for signing up! Spread
-                    the love and invite those you think
-                    will enjoy our private community that values deep learning and <span
-                        style="font-weight:600; color:#d9714e">social
-                        connection</span>.</div>
+                <div class="sign-up-response" id="response" style="display: none">
+                    <div class="sign-up-response">
+                        <div class="sign-up-response-text">
+                            Thank you for signing up! Spread the love and invite those you think will enjoy our private
+                            community that values deep learning and <span style="font-weight:600; color:#d9714e">social
+                                connection</span>.
+                        </div>
+                        <div id="share-block">
+                            <div id="fb-share-button"
+                                onClick="popupWindow('https://www.facebook.com/sharer.php?display=popup&u=https%3A%2F%2Fgetcanteen.com', 'sharer', window, 555, 744);">
+                                <svg viewBox="0 0 12 12" preserveAspectRatio="xMidYMid meet">
+                                    <path class="svg-icon-path"
+                                        d="M9.1,0.1V2H8C7.6,2,7.3,2.1,7.1,2.3C7,2.4,6.9,2.7,6.9,3v1.4H9L8.8,6.5H6.9V12H4.7V6.5H2.9V4.4h1.8V2.8 c0-0.9,0.3-1.6,0.7-2.1C6,0.2,6.6,0,7.5,0C8.2,0,8.7,0,9.1,0.1z">
+                                    </path>
+                                </svg>
+                                <span>Share</span>
+                            </div>
+                            <div id="twitter-share-button"
+                                onClick="popupWindow('https://twitter.com/share?url=https://getcanteen.com&amp;text=Learn%20with%20me%20at&amp;hashtags=LearningNetwork', 'sharer', window, 500, 260);">
+                                <svg viewBox="328 355 335 276" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="
+                                      M 630, 425
+                                      A 195, 195 0 0 1 331, 600
+                                      A 142, 142 0 0 0 428, 570
+                                      A  70,  70 0 0 1 370, 523
+                                      A  70,  70 0 0 0 401, 521
+                                      A  70,  70 0 0 1 344, 455
+                                      A  70,  70 0 0 0 372, 460
+                                      A  70,  70 0 0 1 354, 370
+                                      A 195, 195 0 0 0 495, 442
+                                      A  67,  67 0 0 1 611, 380
+                                      A 117, 117 0 0 0 654, 363
+                                      A  65,  65 0 0 1 623, 401
+                                      A 117, 117 0 0 0 662, 390
+                                      A  65,  65 0 0 1 630, 425
+                                      Z" />
+                                </svg>
+                                <span>Tweet</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div></div>
+                </div>
             </div>
         </div>
 
