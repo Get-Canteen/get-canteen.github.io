@@ -36,25 +36,72 @@
 
     <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
     <script>
+
+        var accessCodeKey = "canteen-access-code";
+        var accessCode = getCookie(accessCodeKey);
+        console.log(accessCode);
+        if (accessCode == "") {
+            accessCode = uuidv4();
+            setCookie(accessCodeKey, accessCode);
+        }
+
+        function uuidv4() {
+            return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+                (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+            );
+        }
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function setCookie(cname, cvalue) {
+            var d = new Date();
+            d.setFullYear(d.getFullYear() + 1);
+            var expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function loadAccessCode() {
+            document.getElementById("access-code-value").innerHTML = accessCode;
+        }
+
         $(function () {
 
-            $('form').on('submit', function (e) {
+            $('#sign-up-form').on('submit', function (e) {
 
                 e.preventDefault();
 
                 var learnSkill = $('#beginner-learn:checked').val() ? $('#beginner-learn:checked').val() : ($('#intermediate-learn:checked').val() ? $('#intermediate-learn:checked').val() : ($('#advanced-learn:checked').val() ? $('#advanced-learn:checked').val() : ''));
                 $learnInput = $('<input type="text" name="entry.134050487"/>').val(learnSkill);
-                $('form').append($learnInput);
+                $('#sign-up-form').append($learnInput);
 
                 var teachSkill = $('#beginner-teach:checked').val() ? $('#beginner-teach:checked').val() : ($('#intermediate-teach:checked').val() ? $('#intermediate-teach:checked').val() : ($('#advanced-teach:checked').val() ? $('#advanced-teach:checked').val() : ''));
                 $teachInput = $('<input type="text" name="entry.202938604"/>').val(teachSkill);
-                $('form').append($teachInput);
+                $('#sign-up-form').append($teachInput);
 
 
                 $.ajax({
                     type: 'post',
                     url: 'https://docs.google.com/forms/d/e/1FAIpQLSc4qTbvTe6ZCVzdBRwaiXcmzWUbfFC5yZ9QMU9LlkRtizwSlA/formResponse',
-                    data: $('form').serialize(),
+                    data: $('#sign-up-form').serialize(),
+                });
+
+                $.ajax({
+                    type: 'post',
+                    url: 'https://docs.google.com/forms/u/0/d/e/1FAIpQLScVGst71s2OS2GNPHNhOWZ9eczwVHxjzZ3yLKhTFPMjT8dlxQ/formResponse',
+                    data: { "entry.392564323": $('#email-field').val(), "entry.999722601": accessCode },
                 });
 
             });
@@ -70,8 +117,8 @@
 
 </head>
 
-<body>
-    <div class="hero-image-long">
+<body onload="loadAccessCode()">
+    <div class=" hero-image-long">
         <div class="form-container">
             <div class="form-wrapper">
                 <div class="title-container">
@@ -82,10 +129,10 @@
                     </div>
                 </div>
                 <div id="form-box" class="form-box">
-                    <form class="form"
+                    <form id="sign-up-form" class="form"
                         onsubmit="document.getElementById('title-text').style.display = 'none';document.getElementById('response').style.display = 'block';document.getElementById('form-box').style.display = 'none';return false"
                         method="post">
-                        <label class="form-label">Email address*</label>
+                        <label class="form-label">Email address <span style="color:red">*</span></label>
                         <input id="email-field" class="form-field" type="email" placeholder="Email address"
                             name="entry.2005620554" required><br />
 
@@ -115,7 +162,7 @@
                         <label class="form-label">If you want to <span style="color:#d9714e">learn</span>, how much
                             would
                             you
-                            donate for 30 minutes?</label>
+                            pay for 30 minutes?</label>
                         <input class="form-field" type="text" placeholder="$10" name="entry.1746995999"><br />
 
                         <label class="form-label">What do you want to <span style="color:#d9714e">teach</span> over
@@ -141,10 +188,12 @@
                             </div>
                         </div>
 
-                        <label class="form-label">If you want to <span style="color:#d9714e">teach</span>, what is the
-                            suggested
-                            donation for 30 minutes?</label>
+                        <label class="form-label">If you want to <span style="color:#d9714e">teach</span>, how much do
+                            you charge for 30 minutes?</label>
                         <input class="form-field" type="text" placeholder="$10" name="entry.453049746"><br />
+
+                        <label class="form-label">Enter access code if you have one:</label>
+                        <input class="form-field" type="text" placeholder="" name="entry.2074408688"><br />
 
                         <div class="button-block">
                             <input class="button-primary" type="submit" value="Submit">
@@ -155,9 +204,14 @@
                 <div class="sign-up-response" id="response" style="display: none">
                     <div class="sign-up-response">
                         <div class="sign-up-response-text">
-                            Thank you for signing up! Spread the love and invite those you think will enjoy our private
+                            Thank you for signing up! Spread the love and invite those you think will enjoy our
+                            private
                             community that values deep learning and <span style="font-weight:600; color:#d9714e">social
                                 connection</span>.
+                        </div>
+                        <div id="access-code-container">
+                            <div id="access-code-text">Here is your secret access code to invite your friends:</div>
+                            <div id="access-code-box"><span id="access-code-value"></span></div>
                         </div>
                         <div id="share-block">
                             <div id="fb-share-button"

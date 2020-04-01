@@ -198,3 +198,15 @@ body, html {
     font-size: 14px;
     padding: 0 3px
 }
+
+#access-code-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#access-code-box {
+    background-color: rgb(216, 216, 216);
+    text-align: center;
+    font-weight: 600;
+    padding: 15px;
+}
