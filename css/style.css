@@ -207,6 +207,9 @@ body, html {
 #access-code-box {
     background-color: rgb(216, 216, 216);
     text-align: center;
-    font-weight: 600;
     padding: 15px;
+}
+
+#access-code-box span {
+    font-weight: 600;
 }
