@@ -115,16 +115,11 @@ body, html {
     line-height: 18px;
 }
 
-.radio-answer-container {
-    display: flex;
+.text-area-field {
+    line-height: 16px;
+    width: 100%;
 }
 
-.radio-option-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-right: 5%;
-}
 
 .button-block {
     padding-top: 20px;
