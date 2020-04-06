@@ -104,6 +104,25 @@
                     data: { "entry.392564323": $('#email-field').val(), "entry.999722601": accessCode },
                 });
 
+                if ($('#profile-picture').prop('files').length > 0) {
+
+                    var file = $('#profile-picture').prop('files')[0];
+
+                    var fileSize = ((file.size / 1024) / 1024).toFixed(4);
+
+                    if (fileSize < 10) {
+                        var d = new Date();
+                        $.ajax({
+                            type: 'post',
+                            url: 'https://storage.googleapis.com/upload/storage/v1/b/getcanteen-signup/o?uploadType=media&name=' + $('#email-field').val() + '-' + d.getTime(),
+                            contentType: file.type,
+                            data: file,
+                            processData: false
+                        });
+                    }
+                }
+
+
             });
 
         });
@@ -140,28 +159,21 @@
                         <input id="name-field" class="form-field" type="text" placeholder="" name="entry.1849631853"
                             required><br />
 
+                        <label for="profile-picture">Profile picture</label>
+                        <span>If uploaded, we will automatically upload your image in our
+                            app.</span><br /><br />
+                        <input type="file" id="profile-picture" name="profile-picture" accept="image/*">
+
                         <label class="form-label">What do you want to <span style="color:#d9714e">learn</span> over
                             video
                             chat?</label>
-                        <input class="form-field" type="text" placeholder="Vinyasa yoga" name="entry.1045781291"><br />
+                        <input class="form-field" type="text" placeholder="Investing in stocks"
+                            name="entry.1045781291"><br />
 
-                        <label class="form-label">What is your skill level of what you want to <span
-                                style="color:#d9714e">learn</span>?</label>
-                        <div class="radio-answer-container">
-                            <div class="radio-option-container">
-                                <label for="beginner-learn">Beginner</label>
-                                <input type="radio" id="beginner-learn" name="learn-skill-level" value="beginner">
-                            </div>
-                            <div class="radio-option-container">
-                                <label for="intermediate-learn">Intermediate</label>
-                                <input type="radio" id="intermediate-learn" name="learn-skill-level"
-                                    value="intermediate">
-                            </div>
-                            <div class="radio-option-container">
-                                <label for="advanced-learn">Advanced</label>
-                                <input type="radio" id="advanced-learn" name="learn-skill-level" value="advanced">
-                            </div>
-                        </div>
+                        <label class="form-label">Describe what you want to <span style="color:#d9714e">learn</span> in
+                            detail.</label>
+                        <textarea style="line-height: 16px;" cols="40" type="text" name="entry.162691096"
+                            placeholder="How to swing trade stocks using technical analysis"></textarea><br />
 
                         <label class="form-label">If you want to <span style="color:#d9714e">learn</span>, how much
                             would
@@ -172,26 +184,13 @@
                         <label class="form-label">What do you want to <span style="color:#d9714e">teach</span> over
                             video
                             chat?</label>
-                        <input class="form-field" type="text" placeholder="Dumpling wrapping"
+                        <input class="form-field" type="text" placeholder="Building a website"
                             name="entry.1804530665"><br />
 
-                        <label class="form-label">What is your skill level of what you want to <span
-                                style="color:#d9714e">teach</span>?</label>
-                        <div class="radio-answer-container">
-                            <div class="radio-option-container">
-                                <label for="beginner-teach">Beginner</label>
-                                <input type="radio" id="beginner-teach" name="teach-skill-level" value="beginner">
-                            </div>
-                            <div class="radio-option-container">
-                                <label for="intermediate-teach">Intermediate</label>
-                                <input type="radio" id="intermediate-teach" name="teach-skill-level"
-                                    value="intermediate">
-                            </div>
-                            <div class="radio-option-container">
-                                <label for="advanced-teach">Advanced</label>
-                                <input type="radio" id="advanced-teach" name="teach-skill-level" value="advanced">
-                            </div>
-                        </div>
+                        <label class="form-label">Describe what you want to <span style="color:#d9714e">teach</span> in
+                            detail.</label>
+                        <textarea style="line-height: 15px;" cols="40" type="text" name="entry.632899299"
+                            placeholder="Building a personal blog using Wordpress"></textarea><br />
 
                         <label class="form-label">If you want to <span style="color:#d9714e">teach</span>, how much do
                             you charge for 30 minutes?</label>

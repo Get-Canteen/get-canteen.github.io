@@ -115,10 +115,6 @@ body, html {
     line-height: 18px;
 }
 
-.form-field {
-    padding-bottom: 8px;
-}
-
 .radio-answer-container {
     display: flex;
 }
