@@ -58,6 +58,18 @@ body, html {
     justify-content: center;
 }
 
+.footer-icon-block {
+    display: flex;
+    flex-direction: row;
+}
+
+.social-media-icon {
+    color:whitesmoke;
+    font-size:24px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 .text-input {
     color: gray;
     width: 100%;
