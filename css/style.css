@@ -68,13 +68,24 @@ body, html {
 
 .news-block {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding-top: 60px;
     padding-bottom: 60px;
     background-color: white;
 
+}
+
+.featured-title {
+    font-size: x-large;
+}
+
+.news-image-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (max-width: 550px) {
@@ -84,6 +95,13 @@ body, html {
       align-items: center;
       padding-top: 30px;
       padding-bottom: 30px;
+    }
+
+    .news-image-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .news-logo {
