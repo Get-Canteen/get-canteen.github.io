@@ -145,8 +145,8 @@ body, html {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding-right: 4vw;
-        padding-left: 4vw;
+        padding-right: 5vw;
+        padding-left: 5vw;
     }
 }
 
