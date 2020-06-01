@@ -84,6 +84,15 @@ body, html {
     align-items: center;
 }
 
+.main-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 0;
+    padding-left: 0;
+}
+
 @media (max-width: 992px) {
 
     .hero-text {
@@ -97,6 +106,15 @@ body, html {
         height: 100%;
         max-width: 400px;
     }
+
+    .main-text-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-right: 0;
+        padding-left: 0;
+    }
 }
 
 @media (max-width: 768px) {
@@ -106,6 +124,8 @@ body, html {
         justify-content: center;
         align-items: center;
         padding-bottom: 10vh;
+        padding-right: 20vw;
+        padding-left: 20vw;
     }
 
     .hero-text {
@@ -113,10 +133,20 @@ body, html {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        max-width: 400px;
+        max-width: 100vw;
         padding-right: 0;
+        padding-left: 0;
         padding-top: 15vh;
         padding-bottom: 5vh;
+    }
+
+    .main-text-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-right: 4vw;
+        padding-left: 4vw;
     }
 }
 
@@ -133,13 +163,6 @@ body, html {
 
 .secondary-text {
     font-size: large;
-}
-
-.main-text-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .mission-block {
@@ -248,8 +271,11 @@ body, html {
     justify-content: center;
     background-color: rgb(61, 62, 66);
     color: white;
-    padding-top: 10%;
-    padding-bottom: 10%;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    text-align: center;
 }
 
 .footer-icon-block {
