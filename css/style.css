@@ -144,7 +144,22 @@ body, html {
 
 .mission-block {
     display: flex;
-    padding: 60px;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    padding-left: 25vw;
+    padding-right: 25vw;
+    text-align: center;
+}
+
+@media (max-width: 992px) {
+    .mission-block {
+        display: flex;
+        padding-top: 10vh;
+        padding-bottom: 10vh;
+        padding-left: 10vw;
+        padding-right: 10vw;
+        text-align: center;
+    }
 }
 
 .mission-text {
