@@ -8,13 +8,11 @@
   <meta charset="utf-8">
   <title>Canteen - Connect, Learn & Earn</title>
   <meta property=”og:title” content=”Canteen”>
-  <meta name="description"
-    content="Welcome to our private learning community. Connect with interesting people over video chat. Teach or learn. And earn money.">
+  <meta name="description" content="Grow your professional community and earn money.">
   <meta name="author" content="Canteen">
-  <meta property="og:description"
-    content="Welcome to our private learning community. Connect with interesting people over video chat. Teach or learn. And earn money.">
+  <meta property="og:description" content="Grow your professional community and earn money.">
   <meta property="og:image"
-    content='https://raw.githubusercontent.com/Get-Canteen/get-canteen.github.io/master/images/canteen-meta.jpeg?raw=true'>
+    content='https://raw.githubusercontent.com/Get-Canteen/get-canteen.github.io/master/images/canteen-app.png?raw=true'>
   <meta property="og:type" content=”website”>
 
   <!-- Mobile Specific Metas
@@ -69,6 +67,14 @@
       });
 
     });
+
+    $(window).scroll(function () {
+      if ($(window).scrollTop() > 10) {
+        $('#navbar').addClass('floatingNav');
+      } else {
+        $('#navbar').removeClass('floatingNav');
+      }
+    });
   </script>
 
 
@@ -78,46 +84,62 @@
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="hero-image">
-    <div class="hero-text">
-      <h1 class="title">Canteen</h1>
-      <div class="main-text-container">
-        <h4 class="main-text">
-          Welcome to our network of public and private interest groups.
-        </h4>
-        <h4 class="main-text">
-          Share your knowledge, services, and life experiences with others.
-        </h4>
-        <h4 class="main-text">
-          Connect and network with members conveniently and earn money.
-        </h4>
+  <div id="navbar">
+    <a href="">
+      <div id="logo">
+        <img id="logo-image" src="images/logo.png" alt="Canteen">
       </div>
-      <form method='post'>
-        <div class="row" id="form-row">
-          <div class="landing-page-email-block">
-            <input type="email" placeholder="Enter email address" name="EMAIL" class="text-input" id="mce-EMAIL"
-              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
-          </div>
-          <div>
-            <input class="button-primary" type="submit" value="Sign Up">
-          </div>
+    </a>
+  </div>
+  <div class="hero-image">
+    <div class="content">
+      <div class="hero-text">
+        <div class="main-text-container">
+          <h4 class="main-text">
+            Grow your professional community and earn money
+          </h4>
+          <h4 class="secondary-text">
+            Connect and network with members conveniently. Share your knowledge, services, and life
+            experiences with others. Explore communities you're interested in.
+          </h4>
         </div>
-      </form>
+        <form method='post'>
+          <div class="row" id="form-row">
+            <div class="landing-page-email-block">
+              <input type="email" placeholder="Enter email address" name="EMAIL" class="text-input" id="mce-EMAIL"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+            </div>
+            <div>
+              <input class="button-primary" type="submit" value="Sign Up">
+            </div>
+          </div>
+        </form>
+      </div>
+      <img class="app" src="images/canteen-app.png" alt="Canteen app">
+    </div>
+  </div>
+  <div class="news-block">
+    <div class="news-image-block">
+      <div class="news-image-container">
+        <img class="news-logo" src="images/transtech.png" alt="Transformative Technologies Conference">
+      </div>
+      <div class="news-image-container">
+        <a class="news-link" href="https://cognitiveworld.com" target="_blank">
+          <img class="news-logo" src="images/cognitive-world.png" alt="Cognitive World AI Contributor Group on Forbes">
+        </a>
+      </div>
+      <div class="news-image-container">
+        <a href="https://thriveglobal.com/stories/convenient-ways-to-optimize-your-underutilized-time/" target="_blank">
+          <img class="news-logo-small" src="images/thrive-global.png" alt="Thrive Global">
+        </a>
+      </div>
+
     </div>
   </div>
   <div class="mission-block">
     <h1 class="mission-text">Canteen is a network of communities where people can either search or offer solutions to
       fulfill each others’ needs. Explore your interests, discover new passions, connect with people you want to learn
       from, and support each other.</h1>
-  </div>
-  <div class="news-block">
-    <p class="featured-title">Featured in:</p>
-    <div class="news-image-block">
-      <img class="news-logo" src="images/transtech.png" alt="Transformative Technologies Conference">
-      <a class="news-link" href="https://cognitiveworld.com" target="_blank">
-        <img class="news-logo" src="images/cognitive-world.png" alt="Cognitive World AI Contributor Group on Forbes">
-      </a>
-    </div>
   </div>
   <div class="footer-block">
     <p>Looking to onboard your community? Contact us at hello@getcanteen.com</p>
