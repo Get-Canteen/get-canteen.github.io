@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>Canteen - Connect, Learn & Earn</title>
+    <meta property=”og:title” content=”Canteen”>
+    <meta name="description" content="Grow your professional community and earn money.">
+    <meta name="author" content="Canteen">
+    <meta property="og:description" content="Grow your professional community and earn money.">
+    <meta property="og:image"
+        content='https://raw.githubusercontent.com/Get-Canteen/get-canteen.github.io/master/images/canteen-app.png?raw=true'>
+    <meta property="og:type" content=”website”>
+
+    <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+    <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="images/icon.png">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161481468-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161481468-1');
+    </script>
+
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script>
+        $(function () {
+
+            $('form').on('submit', function (e) {
+
+                e.preventDefault();
+
+                $.ajax({
+                    type: 'post',
+                    url: 'https://getcanteen.us19.list-manage.com/subscribe/post?u=c295881f208eb6e962fe40ae5&amp;id=53fd8cd7be',
+                    data: $('form').serialize(),
+                    error: function () {
+                        window.location.href = `sign-up.html?email=${$('#mce-EMAIL').val()}`;
+                    },
+                    success: function () {
+                        window.location.href = `sign-up.html?email=${$('#mce-EMAIL').val()}`;
+                    }
+                });
+
+            });
+
+        });
+
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 10) {
+                $('#navbar').addClass('floatingNav');
+            } else {
+                $('#navbar').removeClass('floatingNav');
+            }
+        });
+    </script>
+
+
+</head>
+
+<body>
+
+    <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <div id="navbar">
+        <div id="navbar-block">
+            <a id="navbar-logo" href="index">
+                <div id="logo">
+                    <img id="logo-image" src="images/logo.png" alt="Canteen">
+                </div>
+            </a>
+            <div id="navbar-menu">
+                <a id="navbar-link" href="team">Team</a>
+                <a id="nav-sign-up-button">Sign Up</a>
+            </div>
+        </div>
+    </div>
+    <div class="team-main-container">
+        <div class="team-block">
+            <div class="team-text-block">
+                <h1 class="team-title">Our Team</h1>
+                <p class="team-description">It takes a great team to build a great product. Meet the brains behind
+                    Canteen.</p>
+            </div>
+            <div class="team-profile-block">
+                <div id="profile-cece" class="team-profile">
+                    <img class="profile-image" src="images/cece.jpg" alt="Canteen app">
+                    <div class="profile-text-block">
+                        <p class="team-name-text">Cece Chen</p>
+                        <p class="team-title-text">Co-Founder</p>
+                        <a id="view-profile-cece" class="view-profile-button">View Canteen Profile</a>
+                    </div>
+                </div>
+
+                <div id="myModal" class="modal">
+                    <div class="modal-block">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <img class="app" src="images/canteen-cece-profile.png" alt="Canteen profile Cece">
+                        </div>
+                    </div>
+
+                </div>
+
+                <a class="team-profile">
+                    <img class="profile-image" src="images/brian.jpg" alt="Canteen app">
+                    <div class="profile-text-block">
+                        <p class="team-name-text">Brian Hsu</p>
+                        <p class="team-title-text">Co-Founder</p>
+                        <p class="view-profile-button">View Canteen Profile</p>
+                    </div>
+                </a>
+                <a class="team-profile">
+                    <img class="profile-image" src="images/daniel.png" alt="Canteen app">
+                    <div class="profile-text-block">
+                        <p class="team-name-text">Daniel Lipson</p>
+                        <p class="team-title-text">Product Marketing Manager</p>
+                        <p class="view-profile-button">View Canteen Profile</p>
+                    </div>
+                </a>
+                <a class="team-profile">
+                    <img class="profile-image" src="images/don.jpeg" alt="Canteen app">
+                    <div class="profile-text-block">
+                        <p class="team-name-text">Donald Chen</p>
+                        <p class="team-title-text">Software Engineer</p>
+                        <p class="view-profile-button">View Canteen Profile</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="team-block">
+            <div class="team-text-block">
+                <h1 class="team-title">Our Advisors</h1>
+                <p class="team-description">The best and brightest innovators in Silicon Valley advise our team</p>
+            </div>
+            <div class="advisor-profile-block">
+                <div class="team-profile">
+                    <img class="profile-image" src="images/greg-hornby.png" alt="Canteen app">
+                    <div class="profile-text-block">
+                        <p class="team-name-text">Greg Hornby</p>
+                        <p class="team-title-text">Technical Advisor</p>
+                        <a class="view-profile-button">View Canteen Profile</a>
+                    </div>
+                </div>
+                <a class="team-profile">
+                    <img class="profile-image" src="images/sterling.jpg" alt="Canteen app">
+                    <div class="profile-text-block">
+                        <p class="team-name-text">Sterling Nakamura</p>
+                        <p class="team-title-text">Healthcare Advisor</p>
+                        <p class="view-profile-button">View Canteen Profile</p>
+                    </div>
+                </a>
+                <a class="team-profile">
+                    <img class="profile-image" src="images/richard-ling.jpeg" alt="Canteen app">
+                    <div class="profile-text-block">
+                        <p class="team-name-text">Richard Ling</p>
+                        <p class="team-title-text">Venture Capital Advisor</p>
+                        <p class="view-profile-button">View Canteen Profile</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-block">
+        <div class="copyright-block">
+            <p>© 2020 Copyright Canteen LLC</p>
+        </div>
+        <div class="footer-icon-block">
+            <a class="social-media-icon" href="https://www.facebook.com/getcanteen" target="_blank">
+                <i class="fa fa-facebook-square"></i>
+            </a>
+            <a class="social-media-icon" href="https://www.instagram.com/getcanteen" target="_blank">
+                <i class="fa fa-instagram"></i>
+            </a>
+            <a class="social-media-icon" href="https://www.linkedin.com/company/getcanteen" target="_blank">
+                <i class="fa fa-linkedin-square"></i>
+            </a>
+            <a class="social-media-icon" href="https://twitter.com/getcanteen" target="_blank">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("view-profile-cece");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+
+    <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+
+</html>
