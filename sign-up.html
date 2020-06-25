@@ -83,18 +83,13 @@
 
                 e.preventDefault();
 
-                var learnSkill = $('#beginner-learn:checked').val() ? $('#beginner-learn:checked').val() : ($('#intermediate-learn:checked').val() ? $('#intermediate-learn:checked').val() : ($('#advanced-learn:checked').val() ? $('#advanced-learn:checked').val() : ''));
-                $learnInput = $('<input type="text" name="entry.134050487"/>').val(learnSkill);
+                var learnSkill = $('#offering:checked').val() ? $('#offering:checked').val() : ($('#request:checked').val() ? $('#request:checked').val() : '');
+                $learnInput = $('<input type="text" name="entry.1045781291"/>').val(learnSkill);
                 $('#sign-up-form').append($learnInput);
-
-                var teachSkill = $('#beginner-teach:checked').val() ? $('#beginner-teach:checked').val() : ($('#intermediate-teach:checked').val() ? $('#intermediate-teach:checked').val() : ($('#advanced-teach:checked').val() ? $('#advanced-teach:checked').val() : ''));
-                $teachInput = $('<input type="text" name="entry.202938604"/>').val(teachSkill);
-                $('#sign-up-form').append($teachInput);
-
 
                 $.ajax({
                     type: 'post',
-                    url: 'https://docs.google.com/forms/d/e/1FAIpQLSc4qTbvTe6ZCVzdBRwaiXcmzWUbfFC5yZ9QMU9LlkRtizwSlA/formResponse',
+                    url: 'https://docs.google.com/forms/d/e/1FAIpQLSeJFSh9m98112Ei5FbSGf1PfOctKr45b7oMHcEtak6SATIWpA/formResponse',
                     data: $('#sign-up-form').serialize(),
                 });
 
@@ -141,13 +136,11 @@
         <div class="form-container">
             <div class="form-wrapper">
                 <div class="title-container">
-                    <h1>Canteen Sign-Up</h1>
+                    <h1 id="sign-up-title">Canteen Sign-Up</h1>
                     <div id="title-text">
-                        <p>After you fill out this form, we will connect you with someone
-                            who shares your interests to learn from or teach. This
-                            information will automatically be uploaded to our mobile app and you will receive an email
-                            to download the app soon.</p>
-
+                        <p class="body-text">After you fill out this form, we will create a user profile for you on our
+                            app
+                            and send you the link to download our iOS app. (Android app will be available later.)</p>
                     </div>
                 </div>
                 <div id="form-box" class="form-box">
@@ -167,42 +160,43 @@
                             app.</span><br /><br />
                         <input type="file" id="profile-picture" name="profile-picture" accept="image/*">
 
-                        <label class="form-label">Personal website</label>
+                        <label class="form-label">Personal website <span style="color:red">*</span></label>
                         <span>Website, LinkedIn, Instagram, etc.</span><br /><br />
                         <input id="website-field" class="form-field" type="text" placeholder="getcanteen.com"
                             name="entry.416975585"><br />
-
-                        <label class="form-label">What do you want to <span style="color:#1877f2">learn</span> over
-                            video
-                            chat?</label>
+                        <div class="offering-description-container">
+                            <h5>List an offering or request</h5>
+                            <p class="body-text">Add a skill, service, or experience that you can offer to others or add
+                                a request that
+                                you are seeking from others.</p>
+                        </div>
+                        <div class="radio-answer-container">
+                            <div class="radio-option-container">
+                                <label for="offering">Offering</label>
+                                <input type="radio" id="offering" name="learn-skill-level" value="Offering">
+                            </div>
+                            <div class="radio-option-container">
+                                <label for="request">Request</label>
+                                <input type="radio" id="request" name="learn-skill-level" value="Request">
+                            </div>
+                        </div>
+                        <label class="form-label">Name of offering/request</label>
                         <input class="form-field" type="text" placeholder="Investing in stocks"
-                            name="entry.1045781291"><br />
+                            name="entry.162691096"><br />
 
-                        <label class="form-label">Describe what you want to <span style="color:#1877f2">learn</span> in
-                            detail (include skill level).</label>
-                        <textarea class="text-area-field" cols="40" type="text" name="entry.162691096"
-                            placeholder="How to swing trade stocks using technical analysis, beginner"></textarea><br />
+                        <label class="form-label">Price ($)</label>
+                        <input class="form-field" type="text" placeholder="30.00" name="entry.134050487"><br />
 
-                        <label class="form-label">If you want to <span style="color:#1877f2">learn</span>, how much
-                            would
-                            you
-                            pay for 30 minutes?</label>
-                        <input class="form-field" type="text" placeholder="$10" name="entry.1746995999"><br />
+                        <label class="form-label">Quantity</label>
+                        <p class="body-text">The quantity of the offering/request for the listed price.</p>
+                        <p class="body-text">Examples: 30 minutes, 1 day, 2
+                            interviews, 5 introductions</p><br />
+                        <input class="form-field" type="text" placeholder="30 minutes" name="entry.1746995999"><br />
 
-                        <label class="form-label">What do you want to <span style="color:#1877f2">teach</span> over
-                            video
-                            chat?</label>
-                        <input class="form-field" type="text" placeholder="Building a website"
-                            name="entry.1804530665"><br />
 
-                        <label class="form-label">Describe what you want to <span style="color:#1877f2">teach</span> in
-                            detail (include skill level).</label>
+                        <label class="form-label">Description of offering/request</label>
                         <textarea class="text-area-field" cols="40" type="text" name="entry.632899299"
-                            placeholder="Building a personal blog using Wordpress, intermediate/advanced"></textarea><br />
-
-                        <label class="form-label">If you want to <span style="color:#1877f2">teach</span>, how much do
-                            you charge for 30 minutes?</label>
-                        <input class="form-field" type="text" placeholder="$10" name="entry.453049746"><br />
+                            placeholder="I'm looking to learn how to swing trade stocks using technical analysis."></textarea><br />
 
                         <label class="form-label">Enter access code if you have one:</label>
                         <input class="form-field" type="text" placeholder="" name="entry.2074408688"><br />
