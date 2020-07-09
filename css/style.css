@@ -833,33 +833,6 @@ a:active {
     }
 }
 
-.advisor-profile-block {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 100%;
-}
-
-@media (max-width: 768px) {
-    .advisor-profile-block {
-        display: grid;
-        justify-content: space-evenly;
-        grid-template-columns: auto auto;
-        grid-column-gap: 20px;
-        grid-row-gap: 20px;
-    }
-}
-
-@media (max-width: 550px) {
-    .advisor-profile-block {
-        display: grid;
-        justify-content: space-evenly;
-        grid-template-columns: auto;
-        grid-column-gap: 20px;
-        grid-row-gap: 20px;
-    }
-}
-
 .profile-image {
     border-radius: 50%;
     width: 200px;
