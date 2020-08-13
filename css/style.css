@@ -8,10 +8,6 @@ html {
     height: 100%;
 }
 
-li{
-    cursor: pointer;
-}
-
 ul {
     list-style-type: square;
     padding-top: 10px;
@@ -561,11 +557,24 @@ a:active {
     }
 }
 
-.copyright-block {
+.legal-block {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.315);
+}
+
+.policies-block a {
+    text-decoration: underline;
+    color: rgba(255, 255, 255, 0.315);
+}
+
+.policies-block a:hover {
+    text-decoration: underline;
+    color: white;
 }
 
 .social-media-icon {
@@ -976,4 +985,73 @@ a:active {
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
+}
+
+.header-container {
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(90deg, #0084bf, #0c8996 50%);
+    height: 144px;
+}
+
+.banner-title {
+    font-size: 34px;
+    font-weight: 500;
+    margin-bottom: 31px;
+}
+
+.large-text {
+    margin-bottom: 31px;
+    color: rgba(20,39,54,0.7);
+    font-size: 18px;
+    line-height: 1.44;
+}
+
+#policy-container {
+    display: block;
+    max-width: 972px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#policy-container .h3 {
+    display: block;
+    margin-bottom: 31px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.16667;
+}
+
+#policy-container ul {
+    list-style-type: square;
+    padding-top: 0px;
+    padding-left: 40px;
+}
+
+#policy-container .h4 {
+    display: block;
+    margin-bottom: 17px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+#policy-container p {
+    margin-bottom: 15px;
+}
+
+.text-holder {
+    display: block;
+    padding-top: 23px;
+}
+
+.policy-text {
+    margin-bottom: 20px;
 }
