@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Contact Us | Canteen</title>
+    <meta property=”og:title” content='Contact Us | Canteen'>
+    <meta name="description" content="Experiencing an issue on Canteen? Let us know how we can help.">
+    <meta name="author" content="Canteen">
+    <meta property="og:description" content="Experiencing an issue on Canteen? Let us know how we can help.">
+    <meta property="og:image"
+        content='https://raw.githubusercontent.com/Get-Canteen/get-canteen.github.io/master/images/canteen-app.png?raw=true'>
+    <meta property="og:type" content=”website”>
+
+    <link rel="icon" type="image/png" href="images/icon.png">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161481468-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161481468-1');
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="icon" type="image/png" href="images/icon.png">
+
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script>
+
+        $(function () {
+
+            $('#contact-form').on('submit', function (e) {
+
+                e.preventDefault();
+
+                $.ajax({
+                    type: 'post',
+                    url: 'https://docs.google.com/forms/d/e/1FAIpQLSdqfgNvMUQMIfp2TiZl-WVPIfKxElTq4bVnw73-SP4JSfzozQ/formResponse',
+                    data: $('#contact-form').serialize(),
+                });
+            });
+
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="navbar">
+        <div id="navbar-block">
+            <a id="navbar-logo" href="/">
+                <div id="logo">
+                    <img id="logo-image" src="images/logo.png" alt="Canteen">
+                </div>
+            </a>
+            <div id="navbar-menu">
+                <a id="navbar-link" href="team">Team</a>
+                <a id="nav-sign-up-button" href="/">Sign Up</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="body-wrapper">
+        <header class="header-container">
+            <div id="contact-header">
+                <h1>Contact Us</h1>
+                <h4>Questions, bug reports, feedback — we’re here for it all.</h4>
+            </div>
+        </header>
+
+        <div class="contact-container">
+            <div class="form-wrapper">
+                <div id="form-box" class="form-box">
+                    <form id="contact-form" class="form"
+                        onsubmit="document.getElementById('response').style.display = 'block';document.getElementById('form-box').style.display = 'none';return false"
+                        method="post">
+                        <label class="form-label">Name <span style="color:red">*</span></label>
+                        <input id="name-field" class="form-field" type="text" placeholder="" name="entry.679980968"
+                            required><br />
+
+                        <label class="form-label">Email address <span style="color:red">*</span></label>
+                        <input id="email-field" class="form-field" type="email" placeholder="" name="entry.938586493"
+                            required><br />
+
+                        <label class="form-label">Message <span style="color:red">*</span></label>
+                        <textarea class="text-area-field" cols="40" type="text" name="entry.576808370"></textarea><br />
+
+                        <div class="button-block">
+                            <input class="button-primary" type="submit" value="Submit">
+                        </div>
+
+                    </form>
+                </div>
+                <div class="form-response" id="response" style="display:none">
+                    <div class="form-response">
+                        <div class="form-response-text">
+                            Thank you for contacting us! We'll reach out to you as soon as possible.
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer-block">
+        <div class="legal-block">
+            <div class="policies-block">
+                <a href="privacy-policy" target="_blank">Privacy Policy</a>
+                <a href="contact-us" target="_blank">Contact Us</a>
+            </div>
+            <p>© 2020 Copyright Canteen LLC</p>
+        </div>
+        <div class="footer-icon-block">
+            <a class="social-media-icon" href="https://www.facebook.com/getcanteen" target="_blank">
+                <i class="fa fa-facebook-square"></i>
+            </a>
+            <a class="social-media-icon" href="https://www.instagram.com/getcanteen" target="_blank">
+                <i class="fa fa-instagram"></i>
+            </a>
+            <a class="social-media-icon" href="https://www.linkedin.com/company/getcanteen" target="_blank">
+                <i class="fa fa-linkedin-square"></i>
+            </a>
+            <a class="social-media-icon" href="https://twitter.com/getcanteen" target="_blank">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+</html>

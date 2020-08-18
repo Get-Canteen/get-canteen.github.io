@@ -570,6 +570,8 @@ a:active {
 .policies-block a {
     text-decoration: underline;
     color: rgba(255, 255, 255, 0.315);
+    margin-left: 3px;
+    margin-right: 3px;
 }
 
 .policies-block a:hover {
@@ -634,10 +636,30 @@ a:active {
     line-height: 23px;
 }
 
+.body-wrapper {
+    min-height: 100%;
+    margin-bottom: -120px;
+}
+
+@media (max-width: 550px) {
+    .body-wrapper {
+        min-height: 100%;
+        margin-bottom: 0px;
+    }
+}
+
 .form-container {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    
 }
 
 .form-wrapper {
@@ -705,7 +727,7 @@ a:active {
     padding-top: 20px;
 }
 
-.sign-up-response {
+.form-response {
     font-size: large;
 }
 
@@ -994,7 +1016,25 @@ a:active {
     align-items: center;
     flex-direction: column;
     background: linear-gradient(90deg, #0084bf, #0c8996 50%);
-    height: 144px;
+    height: 200px;
+}
+
+#contact-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+#contact-header h1 {
+    color: white;
+}
+
+#contact-header h4 {
+    color: white;
+    font-size: 20px;
 }
 
 .banner-title {
